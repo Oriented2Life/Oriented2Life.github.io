@@ -107,6 +107,28 @@ class Game {
     this.canvas.width = config.canvasWidth;
     this.canvas.height = config.canvasHeight;
     this.bindKeyEvents();
+    this.bindTouchEvents();
+  }
+
+  bindTouchEvents() {
+    let startX, startY;
+    this.canvas.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    });
+
+    this.canvas.addEventListener('touchend', (e) => {
+      const endX = e.changedTouches[0].clientX;
+      const endY = e.changedTouches[0].clientY;
+      const dx = endX - startX;
+      const dy = endY - startY;
+
+      if (Math.abs(dx) > Math.abs(dy)) {
+        this.snake.changeDirection(dx > 0 ? 'right' : 'left');
+      } else {
+        this.snake.changeDirection(dy > 0 ? 'down' : 'up');
+      }
+    });
   }
 
   bindKeyEvents() {
