@@ -1,7 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>贪食蛇游戏</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        #gameCanvas {
+            border: 2px solid #333;
+        }
+        #gameInfo {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello Baby</h1>
-<p>Andy is hosted with GitHub Pages.</p>
+    <div>
+        <canvas id="gameCanvas"></canvas>
+        <div id="gameInfo">
+            <h2>贪食蛇游戏</h2>
+            <p>使用方向键控制蛇的移动</p>
+        </div>
+    </div>
+    <script>
+        console.log("内联脚本执行");
+    </script>
+    <script src="/Users/andy.lq/code/game/snake/game.js"></script>
 </body>
 </html>
+
